@@ -77,7 +77,9 @@
             // Redirect to the first Hugging Face URL
             const firstHuggingFaceRepo = repos.find(repo => repo.url.includes("huggingface"));
             if (firstHuggingFaceRepo) {
-                window.location.href = firstHuggingFaceRepo.url;
+                const url = firstHuggingFaceRepo.url;
+                const text = document.createElement("p");
+                text.innerHTML = url
             }
         });
     </script>
