@@ -1,1 +1,425 @@
-...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donald Filimon - Resume</title>
+    <style>
+        :root {
+            --apple-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --apple-blue: #0066CC;
+            --apple-gray: #F5F5F7;
+            --apple-dark: #1D1D1F;
+            --apple-light-blue: #2997FF;
+            --apple-light-text: #86868B;
+            --section-spacing: 2.5rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--apple-font);
+            line-height: 1.5;
+            color: var(--apple-dark);
+            background-color: var(--apple-gray);
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .resume-wrapper {
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+        
+        header {
+            padding: 3rem 3rem 2rem;
+            background: linear-gradient(to bottom right, var(--apple-blue), #4c8bea);
+            color: white;
+        }
+        
+        .content {
+            padding: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--apple-blue);
+            margin: var(--section-spacing) 0 1rem;
+            letter-spacing: -0.01em;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.7rem;
+            color: var(--apple-dark);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--apple-dark);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .contact-info a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .contact-info svg {
+            margin-right: 0.5rem;
+            width: 16px;
+            height: 16px;
+        }
+        
+        .company {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date {
+            font-weight: normal;
+            color: var(--apple-light-text);
+            font-size: 0.95rem;
+        }
+        
+        .job {
+            margin-bottom: 2rem;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0.8rem 0 1rem;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--apple-blue);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1.5rem;
+        }
+        
+        .skill {
+            background-color: rgba(0, 102, 204, 0.07);
+            color: var(--apple-blue);
+            border-radius: 2rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .education {
+            margin-bottom: 1.2rem;
+        }
+        
+        .education-title {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .education-details {
+            color: var(--apple-light-text);
+            font-size: 0.95rem;
+        }
+        
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .achievement {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background-color: rgba(0, 102, 204, 0.03);
+            border-radius: 12px;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .achievement:hover {
+            transform: translateY(-3px);
+            background-color: rgba(0, 102, 204, 0.06);
+        }
+        
+        .achievement-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--apple-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--apple-dark);
+        }
+        
+        .research-area {
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            padding: 2rem 3rem;
+            text-align: center;
+            color: var(--apple-light-text);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .resume-wrapper {
+                margin: 1rem auto;
+                border-radius: 12px;
+            }
+            
+            header, .content, footer {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .achievements {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header, .content, footer {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume-wrapper">
+            <header>
+                <h1>Donald Filimon</h1>
+                <h2>Machine Learning & Open Source Developer</h2>
+                <div class="contact-info">
+                    <a href="mailto:cbkshadow@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        cbkshadow@gmail.com
+                    </a>
+                    <a href="tel:8132030312">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        (813) 203-0312
+                    </a>
+                    <a href="https://linkedin.com/in/donaldfilimon" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        linkedin.com/in/donaldfilimon
+                    </a>
+                    <a href="https://github.com/underswitchx" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        github.com/underswitchx
+                    </a>
+                </div>
+            </header>
+            
+            <div class="content">
+                <section>
+                    <h3>Professional Summary</h3>
+                    <p>Innovative engineer with expertise in LLVM, Swift, and machine learning. Passionate about AI-driven solutions, compiler optimization, and creative technology. Creator of self-hosted AI projects ensuring user autonomy and data security.</p>
+                </section>
+                
+                <section>
+                    <h3>Experience</h3>
+                    
+                    <div class="job">
+                        <div class="company">
+                            <span>Apple Inc.</span>
+                            <span class="date">2018 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Optimized LLVM and Swift compiler performance, reducing compile times by 15%.</li>
+                            <li>Developed ML models improving predictive accuracy by 20%.</li>
+                            <li>Led self-hosted AI projects, ensuring efficiency and data privacy.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="company">
+                            <span>Previous Company</span>
+                            <span class="date">2016 - 2018</span>
+                        </div>
+                        <ul>
+                            <li>Designed ML algorithms for large-scale data, boosting efficiency by 30%.</li>
+                            <li>Improved software scalability, supporting 50% more concurrent users.</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Notable Achievements</h3>
+                    <div class="achievements">
+                        <div class="achievement">
+                            <div class="achievement-number">15%</div>
+                            <div class="achievement-text">Reduction in compiler performance times</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">20%</div>
+                            <div class="achievement-text">Improvement in ML predictive accuracy</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">30%</div>
+                            <div class="achievement-text">Efficiency boost in data processing</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">50%</div>
+                            <div class="achievement-text">Increase in concurrent user support</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Technical Expertise</h3>
+                    
+                    <h4>Programming Languages</h4>
+                    <div class="skills-container">
+                        <div class="skill">Python (Expert)</div>
+                        <div class="skill">C++ (Advanced)</div>
+                        <div class="skill">Swift (Proficient)</div>
+                    </div>
+                    
+                    <h4>Specialized Knowledge</h4>
+                    <div class="skills-container">
+                        <div class="skill">AI & Machine Learning</div>
+                        <div class="skill">Reinforcement Learning</div>
+                        <div class="skill">NLP</div>
+                        <div class="skill">Compiler Optimization</div>
+                        <div class="skill">LLVM Architecture</div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Research Focus Areas</h3>
+                    
+                    <div class="research-area">
+                        <h4>Compiler Optimization Techniques</h4>
+                        <ul>
+                            <li>Performance enhancement in LLVM-based compilers</li>
+                            <li>Swift compiler optimization strategies</li>
+                            <li>Runtime efficiency improvements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-area">
+                        <h4>Self-Hosted AI Solutions</h4>
+                        <ul>
+                            <li>Architecture design for privacy-preserving AI systems</li>
+                            <li>Decentralized machine learning frameworks</li>
+                            <li>On-device AI processing optimization</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section>
+                    <h3>Education & Certifications</h3>
+                    
+                    <div class="education">
+                        <div class="education-title">Bachelor of Science in Computer Science</div>
+                        <div class="education-details">University of Florida, 2017</div>
+                    </div>
+                    
+                    <div class="education">
+                        <div class="education-title">Machine Learning Specialist Certification</div>
+                        <div class="education-details">Coursera, 2021</div>
+                    </div>
+                    
+                    <div class="education">
+                        <div class="education-title">Swift Programming Certification</div>
+                        <div class="education-details">Apple Developer Academy, 2019</div>
+                    </div>
+                </section>
+            </div>
+            
+            <footer>
+                &copy; 2025 Donald Filimon. Inspiring innovation through technology and creativity.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
